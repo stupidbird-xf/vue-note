@@ -68,6 +68,13 @@
 
 > updated 当数据发生改变渲染之后执行
 
+> activated 
+
+> deactivated
+
+> errorCaptured
+
+> 注意：vue的生命周期函数并不放在methods里面，单独放在实例里 一共有11个生命周期函数
 
 
 
