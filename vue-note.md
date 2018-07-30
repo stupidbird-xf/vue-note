@@ -50,7 +50,26 @@
 
 6. vue的生命周期
 
-> 
+> vue实例在某一个时间点会自动执行的函数
+
+> beforeCreate 在Vue初始化之后执行
+
+> created 初始化结束
+
+> beforeMount 在页面渲染之前执行
+
+> mounted 页面挂载之后执行
+
+> beforeDestroy 当组件被销毁之前执行
+
+> destroyed 当组件被销毁之后执行
+
+> beforeUpdate 当数据发生改变没有渲染之前执行
+
+> updated 当数据发生改变渲染之后执行
+
+
+
 
 
 
