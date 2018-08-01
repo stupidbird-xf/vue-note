@@ -110,6 +110,19 @@
 
 #### 样式绑定
 
+1. class的对象绑定
+
+> :class="{activated: isActivated}"
+
+> :class="[activated]" 数组里面是变量
+
+2. style
+
+> :style="styleObj"
+
+> :style=[styleObj, {fontSize: '20px'}] 样式由数字里面的对象决定
+
+
 
 
 
