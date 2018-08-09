@@ -122,7 +122,11 @@
 
 > :style=[styleObj, {fontSize: '20px'}] 样式由数字里面的对象决定
 
+#### vue的条件渲染
 
+> v-if 操作dom
+
+> v-show 不操作dom ,只是display显隐 性能更优
 
 
 
