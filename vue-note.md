@@ -128,6 +128,18 @@
 
 > v-show 不操作dom ,只是display显隐 性能更优
 
+> v-if v-else-if v-else
+
+> 注：每个input都要加一个key属性，避免input被复用
+
+#### vue中的列表渲染
+
+> v-for="(item) in list"
+
+> v-for="(item) of list"
+
+> 注一般不用index作为key值
+
 
 
 
