@@ -142,7 +142,16 @@
 
 > 注： 提升循环显示的性能，循环项上加唯一的key值 尽量不用index作为key值
 
-> vue7种操作数组的方法
+2. 对象做循环
+
+v-for="(item, key, index) of obj"
+
+#### 修改数组
+
+1. 改变数组中的引用
+
+
+2. vue7种操作数组的方法
 
 push pop shift unshift splice sort reverse
 
@@ -150,9 +159,15 @@ push pop shift unshift splice sort reverse
 
 作用：包裹元素，在循环的时候不会呗真正的渲染出来
 
-2. 对象做循环
+3. vue中的set方法
 
-v-for="(item, key, index) of obj"
+> 改变对象中的值，可以通过实例的方法改变
+
+ > vm.$set(vm.userInfo, 'address', 'beijing');
+
+> 数组上的set方法 
+
+ > vm.$set(vm.userInfo, 2, 'ceshi');
 
 
 
