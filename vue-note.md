@@ -169,7 +169,23 @@ push pop shift unshift splice sort reverse
 
  > vm.$set(vm.userInfo, 2, 'ceshi');
 
+#### 组件使用的细节点
 
+1. table中tbody里面不能直接加模板， 因为tbody里面不许是tr (select>option同理)
+
+	> 需要在tbody里面写<tr is="模板名称"></tr>
+
+2. 子组件里面定义data必须是函数，要返回一个对象
+
+> 原因子组件多次调用，让每一个子组件有独立的数据存储，不会互相影响，根组件调用一次
+
+3. vue中操作dom 
+
+ > ref 引用，<div ref="hello" @click="handleClick"> hello world</div>  this.$refs.hello取出（标签上引用：获取到的是dom元素；组件上引用：获取的是引用）
+
+ 4. 子组件中数据改变，怎么传到父组件上
+
+  > 通过this.$emit('change'); 组件上写@change="方法名"
 
 
 
