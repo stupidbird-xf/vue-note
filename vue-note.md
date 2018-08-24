@@ -124,9 +124,9 @@
 
 #### vue的条件渲染
 
-> v-if 操作dom
+1. v-if 操作dom
 
-> v-show 不操作dom ,只是display显隐 性能更优
+2. v-show 不操作dom ,只是display显隐 性能更优
 
 > v-if v-else-if v-else
 
@@ -134,13 +134,37 @@
 
 #### vue中的列表渲染
 
-> v-for="(item) in list"
+1. 数组循环
 
-> v-for="(item) of list"
+> v-for="(item, index) in list"
 
-> 注一般不用index作为key值
+> v-for="(item, index) of list"
+
+> 注： 提升循环显示的性能，循环项上加唯一的key值 尽量不用index作为key值
+
+> vue7种操作数组的方法
+
+push pop shift unshift splice sort reverse
+
+> template 模板占位符
+
+作用：包裹元素，在循环的时候不会呗真正的渲染出来
+
+2. 对象做循环
+
+v-for="(item, key, index) of obj"
 
 
 
+
+
+难点：
+1. 调用导出excel接口的时候，由于文件过大，接口反应时间过长，最后失败，
+
+> 解决：用浏览器打开新窗口
+
+2. 写移动端的页面，固定定位的元素，滑动手机的时候，它与页面分离
+
+> 在body里面包裹一层div,所有元素都写在div里面，不要直接写在body上
 
 
