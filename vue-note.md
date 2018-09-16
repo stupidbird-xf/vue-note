@@ -171,7 +171,7 @@ push pop shift unshift splice sort reverse
 
 #### 组件使用的细节点
 
-1. table中tbody里面不能直接加模板， 因为tbody里面不许是tr (select>option同理)
+1. table中tbody里面不能直接加模板， 因为tbody里面不许是tr (例：select>option；ul>li；ol>li) is标签解决渲染中的bug2
 
 	> 需要在tbody里面写<tr is="模板名称"></tr>
 
@@ -181,13 +181,34 @@ push pop shift unshift splice sort reverse
 
 3. vue中操作dom 
 
- > ref 引用，<div ref="hello" @click="handleClick"> hello world</div>  this.$refs.hello取出（标签上引用：获取到的是dom元素；组件上引用：获取的是引用）
+ > ref 引用，<div ref="hello" @click="handleClick"> hello world</div>  this.$refs.hello取出（标签上引用：获取到的是标签对应的dom元素；组件上引用：获取的是组件的引用）
 
  4. 子组件中数据改变，怎么传到父组件上
 
-  > 通过this.$emit('change'); 组件上写@change="方法名"
+  > 通过this.$emit('change'); 组件上写@change="父组件中的方法名"
 
+#### 父子组件的数据传递
 
+1. 父组件想子组件传递数据 (通过属性的形式)
+
+> 子组件 <counter count="0"></counter>  :count="0(js表达式)" 传递过去是数字，不带":"传递过去是字符串
+var counter = {
+	props: ['count'],
+	template: '<div>{{count}}</div>'
+}
+
+> 父组件 var vm = new Vue({
+	el: '#root',
+	components: {
+		counter: counter
+	}
+})
+
+注意： 父子间可以通过属性的形式传递参数给子组件，但是子组件不能修改父组件的数据
+
+2. 子组件向父组件传递数据
+
+> 
 
 难点：
 1. 调用导出excel接口的时候，由于文件过大，接口反应时间过长，最后失败，
@@ -198,4 +219,4 @@ push pop shift unshift splice sort reverse
 
 > 在body里面包裹一层div,所有元素都写在div里面，不要直接写在body上
 
-
+### this.$route.query.id 第一次是原类型，之后是字符串类型
