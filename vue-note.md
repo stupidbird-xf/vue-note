@@ -220,3 +220,9 @@ var counter = {
 > 在body里面包裹一层div,所有元素都写在div里面，不要直接写在body上
 
 ### this.$route.query.id 第一次是原类型，之后是字符串类型
+
+#### 
+
+> npm run build 构建
+
+> 如果报错先执行 npm i 
