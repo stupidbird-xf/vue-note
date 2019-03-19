@@ -8,3 +8,18 @@
 
 > 用sudo npm install -g vue-cli
 
+#### `webpack-dev-server --inline --progress --config build/webpack.dev.conf.js`
+
+> node-modules 意外改动 ，删除node-modules之后重新运行npm install 
+
+#### vue脚手架升级
+
+> npm uninstall -g vue-cli  先卸载
+
+> npm install -g @vue-cli  再安装
+
+#### 安装新版vue 
+
+> vue create projectname
+
+
