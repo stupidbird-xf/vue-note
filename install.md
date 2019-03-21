@@ -22,4 +22,57 @@
 
 > vue create projectname
 
+#### ajax请求
 
+> npm install axios 安装axios
+
+> 在src目录下建文件夹lib>axios.js
+
+> import axios from 'axios';
+
+const getXhrPromise = config => new Promise((resolve) => {
+  axios(config).then((res) => {
+    res.data = (typeof res.data === 'object' && res.data) || {};
+    res.data._http_status = res.status;
+    resolve(res.data);
+  }).catch(() => {
+    resolve();
+  });
+});
+
+export default {
+  all(params) {
+    return axios.all(params);
+  },
+  spread(params) {
+    return axios.spread(params);
+  },
+  postKibana(url, data) {
+    const config = {
+      url,
+      method: 'post',
+      data,
+    };
+    return getXhrPromise(config);
+  },
+  post(url, data) {
+    const config = {
+      url,
+      method: 'post',
+      data,
+    };
+    return getXhrPromise(config);
+  },
+  get(url, data) {
+    const config = {
+      url,
+      method: 'get',
+      params: data,
+    };
+    return getXhrPromise(config);
+  },
+};
+
+> 在main.js 里面引入 axios import axios from './lib/axios'
+
+> Vue.prototype.$http = axios;
